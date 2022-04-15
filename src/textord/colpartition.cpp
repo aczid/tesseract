@@ -1308,6 +1308,9 @@ void ColPartition::SetRegionAndFlowTypesFromProjectionValue(int value) {
     if (noisy_count >= blob_count) {
       flow_ = BTFT_NONTEXT;
       blob_type_ = BRT_NOISE;
+    } else {
+      flow_ = BTFT_STRONG_CHAIN;
+      blob_type_ = BRT_TEXT;
     }
   }
   if (TabFind::WithinTestRegion(2, bounding_box_.left(),
